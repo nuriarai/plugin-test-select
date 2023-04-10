@@ -1,0 +1,16 @@
+=== As the plugin has been generated with a plugin boilerplate generator and produce a lot of files to be well constructed, these are the files with my code:
+
+/includes/main-functions-option-test-vw.php
+/admin/css/option-test-vw-admin.css
+
+To show the custom field in the front-end there is a function in the plugin that do this, but only will run if the title of the page is rendered in the theme with the template function "the_thitle", like is in the twentyes themes. 
+
+the_title('<h1 class="entry-title">', '</h1>');
+
+If not, in the theme will have to be add like this:
+
+ echo '<h1 class="entry-title">' .  esc_attr(get_post_meta(get_the_ID(), '_meta_fields_book_title', true)) . " " . get_the_title() . "</h1>"; 
+
+Now that I'm finishing, I'm thinking that may be I have had to manipulate  the title block to show the field also in the editor, but I haven't thought about it before. So this would be an improvement.
+
+Núria Ramoneda
